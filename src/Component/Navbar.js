@@ -15,18 +15,7 @@ import {useSelector} from 'react-redux'
         console.log("loading")
         dispatch(Fetchshop(food))
                }
-               const dim=()=>{
-               <div className=' bg-gray-300 lg:pt-32 flex flex-wrap justify-start'>
-                <img  className=""src='https://office-insider-media.azurefd.net/media/2019/12/Food-GIF.gif'></img>
-                <div className='ml-5 lg:text-9xl font-bold sm:text-sm'><p className='text-orange-600 '>Welcome</p>
-                <p>To Waah Ji Waah</p>
-                <div className='py-16'>
-                <p className='text-3xl  text-gray-700'>Here you get a variety of food according to your mood.</p>
-                <p className='text-3xl text-gray-700'>If you want some specific food then you can simply search your food on given searchbar.</p>
-                </div>
-                </div>
-                </div>
-               }
+             
       return (
  <>
  <div>
@@ -34,33 +23,34 @@ import {useSelector} from 'react-redux'
     <header className=" bg-green-400 body-font">
   <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
     <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-      <img src="https://png.pngtree.com/png-vector/20220527/ourmid/pngtree-food-logo-png-image_4743675.png" className="w-10 h-10 text-white p-2 " viewBox="0 0 24 24">
-        {/* <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path> */}
-      </img>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGUk17K0oSHfUUpclAtjRFYSbGkambVQEapg&usqp=CAU"fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-20 h-20 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24" />
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+      
       <span className="ml-3  font-serif  text-orange-500 text-4xl">Waah Ji Waah</span>
     </a>
-    <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-      <button onClick={dim} className="mb-4  lg:mt-4 lg:mr-4 px-3 py-1 bg-red-400 bg md:mt-4 hover:bg-gray-200 rounded">Home</button>
-    </nav>
+      
+    
     <form>
-      <div className='inp pr-5'>
-    <input className="bg-gray-200 ml-6 " type={"text"}
+    
+
+      <div className='inp pr-5 ml-11'>
+    <input className="bg-gray-200 ml-6 pl-4 rounded-sm" type={"text"}
    placeholder="search here for recipes" onChange={(e)=>(setFood(e.target.value))}/>
    </div>
     </form>
-    <button onClick={mohini} className="inline-flex items-center bg-cyan-200  border-0 py-1 px-3  focus:outline-none hover:bg-black hover:text-white rounded text-base mt-4 md:mt-0">Search
+    <button onClick={mohini} className="inline-flex items-center  bg-cyan-200  border-0 py-1 px-3  focus:outline-none hover:bg-black hover:text-white rounded text-base mt-4 md:mt-0 ml-8">Search
     </button>
   </div>
   </header>
 </div>
 
-        {!recipes?.data?.hits &&<div className=' bg-gray-300 lg:pt-32 flex flex-wrap justify-start'>
-  <img  className="lg:ml-8"src='https://office-insider-media.azurefd.net/media/2019/12/Food-GIF.gif'></img>
-  <div className='ml-5 text-3xl lg:text-9xl font-bold sm:text-sm'><p className='text-orange-600 '>Welcome</p>
-  <p className='text-3xl lg:text-5xl'>To Waah Ji Waah</p>
+        {!recipes?.data?.hits &&<div className=' bg-gray-300  flex flex-none lg:pt-32 sm:flex flex-wrap'>
+   <img  className="lg:ml-8"src='https://office-insider-media.azurefd.net/media/2019/12/Food-GIF.gif'></img>
+  <div className='ml-5 text-3xl lg:text-9xl font-bold '><p className='text-orange-600 '>Welcome To</p>
+  <p className='text-3xl pt-4 lg:text-5xl'> Waah Ji Waah</p>
   <div className='py-5'>
-  <p className='text-2xl lg:text-4xl  text-gray-700'>Here you get a variety of food according to your mood.</p>
-  <p className='text-2xl lg:text-4xl text-gray-700'>If you want some specific food then you can simply search your food on given searchbar.</p>
+  <p className='text-2xl lg:text-4xl   text-gray-700'>Here you get a variety of food according to your mood.<br></br>
+If you want some specific food then you <br></br>can simply search your food on given searchbar.</p>
   </div>
   </div>
   </div>}
@@ -91,9 +81,9 @@ import {useSelector} from 'react-redux'
 <footer className="text-gray-600 body-font bg-green-400">
   <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col ">
     <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGUk17K0oSHfUUpclAtjRFYSbGkambVQEapg&usqp=CAU" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-20 h-20 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24"/>
         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-      </svg>
+      
       <span className="ml-3 text-xl">Waah JI Waah</span>
     </a>
     <p className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
