@@ -2,7 +2,6 @@ import {useEffect,useState} from 'react'
 import {useDispatch} from 'react-redux'
 import {Fetchshop} from './action'
 import {useSelector} from 'react-redux'
-
  const Navbar=()=> {
   const recipes=useSelector((state)=>state.user.recipes)
   console.log(recipes?.data?.hits)
@@ -11,49 +10,69 @@ import {useSelector} from 'react-redux'
   const [food,setFood]=useState()
   const dispatch=useDispatch();
  // useEffect(()=>{
-      //dispatch(Fetchshop(food)) },[ ])
+      //dispatch(Fetchshop(food))},[])
        const mohini=()=>{
         console.log("loading")
-        dispatch(Fetchshop (food))
+        dispatch(Fetchshop(food))
+               }
+               const dim=()=>{
+               <div className=' bg-gray-300 lg:pt-32 flex flex-wrap justify-start'>
+                <img  className=""src='https://office-insider-media.azurefd.net/media/2019/12/Food-GIF.gif'></img>
+                <div className='ml-5 lg:text-9xl font-bold sm:text-sm'><p className='text-orange-600 '>Welcome</p>
+                <p>To Waah Ji Waah</p>
+                <div className='py-16'>
+                <p className='text-3xl  text-gray-700'>Here you get a variety of food according to your mood.</p>
+                <p className='text-3xl text-gray-700'>If you want some specific food then you can simply search your food on given searchbar.</p>
+                </div>
+                </div>
+                </div>
                }
       return (
  <>
  <div>
-    <div className='search flex justify-end py-8  '>
-    <header className="text-gray-600 body-font ">
-  <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center gap-5">
+    <div className='  '>
+    <header className=" bg-green-400 body-font">
+  <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
     <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-      
-      <span className=" text-4xl mr-10 ">Waah Ji Waah</span>
+      <img src="https://png.pngtree.com/png-vector/20220527/ourmid/pngtree-food-logo-png-image_4743675.png" className="w-10 h-10 text-white p-2 " viewBox="0 0 24 24">
+        {/* <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path> */}
+      </img>
+      <span className="ml-3  font-serif  text-orange-500 text-4xl">Waah Ji Waah</span>
     </a>
-   
-    <div className='searchInputs '>
-            <input onChange={(e)=>setFood(( e.target.value))} type="text" placeholder='what you want?'/>
-            </div>
-            
-            <button onClick={mohini} className='bg-white rounded text-xl '>clickme</button>
+    <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
+      <button onClick={dim} className="mb-4  lg:mt-4 lg:mr-4 px-3 py-1 bg-red-400 bg md:mt-4 hover:bg-gray-200 rounded">Home</button>
+    </nav>
+    <form>
+      <div className='inp pr-5'>
+    <input className="bg-gray-200 ml-6 " type={"text"}
+   placeholder="search here for recipes" onChange={(e)=>(setFood(e.target.value))}/>
+   </div>
+    </form>
+    <button onClick={mohini} className="inline-flex items-center bg-cyan-200  border-0 py-1 px-3  focus:outline-none hover:bg-black hover:text-white rounded text-base mt-4 md:mt-0">Search
+    </button>
   </div>
-</header>
+  </header>
 </div>
-        {!recipes?.data?.hits &&<div className=' bg-gray-300 pt-32 flex justify-start pl-4'>
-  <img src='https://office-insider-media.azurefd.net/media/2019/12/Food-GIF.gif'></img>
-  <div className='ml-5 text-9xl font-bold'><p className='text-orange-600'>Welcome</p>
-  <p>To Waah Ji Waah</p>
-  <div className='py-16'>
-  <p className='text-3xl  text-gray-700'>Here you get a variety of food according to your mood.</p>
-  <p className='text-3xl text-gray-700'>If you want some specific food then you can simply search your food on given searchbar.</p>
+
+        {!recipes?.data?.hits &&<div className=' bg-gray-300 lg:pt-32 flex flex-wrap justify-start'>
+  <img  className="lg:ml-8"src='https://office-insider-media.azurefd.net/media/2019/12/Food-GIF.gif'></img>
+  <div className='ml-5 text-3xl lg:text-9xl font-bold sm:text-sm'><p className='text-orange-600 '>Welcome</p>
+  <p className='text-3xl lg:text-5xl'>To Waah Ji Waah</p>
+  <div className='py-5'>
+  <p className='text-2xl lg:text-4xl  text-gray-700'>Here you get a variety of food according to your mood.</p>
+  <p className='text-2xl lg:text-4xl text-gray-700'>If you want some specific food then you can simply search your food on given searchbar.</p>
   </div>
   </div>
   </div>}
 
-    <div className='flex flex-wrap gap-20 pt-32 pb-10 justify-center bg-gray-300 w-full'>
+    <div className='px-4 py-4 flex flex-wrap gap-20 lg:pt-32  justify-center bg-gray-300 w-full'>
       {recipes?.data?.hits?.map((value)=>(
       
     <div className="  max-w-sm rounded-2xl overflow-hidden shadow-2xl bg-white">
   <img className="w-[400px]" src={value.recipe.image} alt="Sunset in the mountains"/>
   <div className="px-6 py-4">
     <div className="font-bold text-xl mb-2">{value.recipe.label}</div>
-    <a href={value.recipe.url} className="text-gray-700 text-base">Link to the recipe
+    <a href={value.recipe.url} className="text-gray-700 text-base inline-block bg-orange-300 rounded-full px-3 py-1 font-semibold  mr-2 mb-2 hover:bg-red-600">Link to the recipe
     </a>
   </div>
   <div className="px-6 pt-4 pb-2">
@@ -80,6 +99,7 @@ import {useSelector} from 'react-redux'
     <p className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
       <a href="https://twitter.com/knyttneve" className="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank"></a>
     </p>
+    <p className='font-bold'>Contact us - 7876009156 </p>
     <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
       <a className="text-gray-500">
         <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-5 h-5" viewBox="0 0 24 24">
@@ -97,7 +117,7 @@ import {useSelector} from 'react-redux'
           <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
         </svg>
       </a>
-      <a className="ml-3 text-gray-500">
+      <a href='https://www.instagram.com' className="ml-3 text-gray-500">
         <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" className="w-5 h-5" viewBox="0 0 24 24">
           <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
           <circle cx="4" cy="4" r="2" stroke="none"></circle>
